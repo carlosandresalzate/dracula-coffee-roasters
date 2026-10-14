@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="data:,"
+      type="image/x-icon" />
+    <title>Contacto - Dracula Coffee Roasters</title>
+    <!-- Pre-carga de tipografía (fallback) -->
+    <link
+      rel="preload"
+      href="../assets/fonts/EB_Garamond/EBGaramond-Regular.ttf"
+      as="font"
+      type="font/ttf" />
+    <link
+      rel="preload"
+      href="../assets/fonts/Plus_Jakarta_Sans/PlusJakartaSans-Regular.ttf"
+      as="font"
+      type="font/ttf" />
+    <!-- Tipografía EB Garamond y Plus Jakarta Sans -->
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+      crossorigin />
+    <!-- Material Icons -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=person,shopping_cart,search,chat,photo_camera,alternate_email,location_on,verified_user,credit_card,local_shipping,sensors,water_drop,pin_drop,support_agent,send,schedule,nightlife,directions_bike,phone_in_talk,mail"
+      rel="stylesheet"
+      crossorigin />
+    <link
+      rel="stylesheet"
+      href="../css/style.css" />
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header>
+      <!-- Header-Top -->
+      <div class="site-header__announcement">
+        <p>
+          🦇 <em>ENVÍOS GRATIS EN PEDIDOS MAYORES A $45.000</em> | TUESTE FRESCO
+          TODOS LOS MARTES Y JUEVES | DRACULA PRO LIGHT EDITION
+        </p>
+      </div>
+      <!-- Nav -->
+      <nav class="main-nav">
+        <!-- Logo -->
+        <div class="main-nav__logo">
+          <a href="../index.html">
+            <img
+              src="../assets/img/logo.svg"
+              alt="El logo es un grano de cafe con alas fe murciélago"
+              width="200" />
+          </a>
+        </div>
+        <!-- Nav-Links -->
+        <ul class="main-nav__links">
+          <li><a href="../index.html">Tienda de café</a></li>
+          <li><a href="./contacto.html">Contacto</a></li>
+        </ul>
+        <!-- Nav-Actions -->
+        <ul class="main-nav__actions">
+          <li>
+            <a href="#">
+              <span class="material-symbols-outlined"> search </span>
+            </a>
+          </li>
+          <li class="main-nav__action">
+            <a href="#">
+              <span class="material-symbols-outlined"> person </span>
+            </a>
+          </li>
+          <li class="main-nav__action">
+            <a href="#">
+              <span class="material-symbols-outlined">shopping_cart</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <!-- Main -->
+    <main>
+      <!-- Hero -->
+      <section class="hero">
+        <article class="hero__article">
+          <p class="label">
+            <span class="label-circle"></span>
+            Espresso Bar &#8226; Laboratorio Botánico
+          </p>
+          <h1 class="hero__title">
+            Ven a Nuestra Cripta de Extracción. <br />
+            <span class="hero__title-emphasis">O Hablemos de Café.</span>
+          </h1>
+          <p class="hero__text">
+            Un santuario secular en procedencia donde colisionan la
+            termodinámica de extracción, microlotes de sombra y pastelería de
+            autor horneada al alba.
+          </p>
+        </article>
+        <div class="hero__info">
+          <div class="hero__info-card hero__info-card--capacity">
+            <span class="material-symbols-outlined"> sensors </span>
+            <h3>Aforo Barra</h3>
+            <p>Disponible (14 asientos)</p>
+          </div>
+          <div class="hero__info-card hero__info-card--activity">
+            <span class="material-symbols-outlined"> water_drop </span>
+            <h3>Tueste del Día</h3>
+            <p>Geisha Huela Natural</p>
+          </div>
+        </div>
+      </section>
+      <section class="widgets">
+        <article class="widget widget--location">
+          <p>
+            <span class="material-symbols-outlined"> pin_drop </span>
+            Santuario Matriz
+          </p>
+          <h2>Paseo de la Artes 1892</h2>
+          <p>
+            Sector de Bellas Artes/Av Corrientes, CABA &#8226; A 180m de La
+            Estación
+          </p>
+        </article>
+        <article class="widget widget--contact-form">
+          <p class="widget__label">
+            <span class="material-symbols-outlined"> support_agent</span>
+            Canal Digital Oficial
+          </p>
+          <h2>Mesa de ayuda & Enlaces Comerciales</h2>
+          <p>
+            Respondemos consultas de pedidos en menos de 90 minutos hábiles.
+          </p>
+          <form class="widget__form">
+            <!-- Asunto -->
+            <label
+              for="subject"
+              class="widget__field">
+              <select
+                class="widget__select"
+                name="subject"
+                id="subject">
+                <option value="1">Selecciona una opción</option>
+                <option value="2">Soporte de pedido online / Despacho</option>
+                <option value="3">
+                  Venta mayorista / Provisión a Cafeterías
+                </option>
+                <option value="4">Reserva de catas privadas & Eventos</option>
+                <option value="5">Consulta Botánica general</option>
+              </select>
+            </label>
+            <!-- Nombre -->
+            <label
+              for="name"
+              class="widget__field">
+              <span>Nombre Completo *</span>
+              <input
+                class="widget__input"
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Ej. Isidora Zúñiga" />
+            </label>
+            <!-- Correo electrónico -->
+            <label
+              for="email"
+              class="widget__field">
+              <span>Correo Electrónico *</span>
+              <input
+                class="widget__input"
+                type="email"
+                id="email"
+                name="email"
+                placeholder="tu@email.com" />
+            </label>
+            <!-- Teléfono (Opcional) -->
+            <label
+              for="tel"
+              class="winget__field">
+              <span>Teléfono Móvil</span>
+              <input
+                class="winget__input"
+                type="tel"
+                id="tel"
+                name="tel"
+                placeholder="+54 9 11 483309" />
+            </label>
+            <!-- Numero del pedido (Opcional) -->
+            <label
+              for="track"
+              class="widget__field">
+              <span>Nº de PEdido (Opcional)</span>
+              <input
+                class="widget_input"
+                type="text"
+                id="track"
+                name="track"
+                placeholder="#DRA-8492" />
+            </label>
+
+            <label
+              for="message"
+              class="widget__field">
+              <span>Mensaje o Requerimiento *</span>
+              <textarea
+                class="widget__textarea"
+                name="message"
+                id="message"
+                placeholder="Cuéntanos en qué podemos asistirte: moliendas específicas, entregas diferidas o propuesta comercial..."></textarea>
+            </label>
+
+            <label class="widget__field widget__field--checkbox">
+              <input
+                type="checkbox"
+                class="widget__checkbox"
+                id="privacy"
+                name="privacy" />
+              <p class="widget__checkbox-text">
+                Acepto el tratamiento de datos según las politicas de privacidad
+                de Dracula Roasters.
+              </p>
+            </label>
+
+            <div class="widget__actions">
+              <button
+                type="submit"
+                class="button button--primary">
+                <span class="material-symbols-outlined">send</span>
+                Transmitir Mensaje al Tostador
+              </button>
+            </div>
+          </form>
+        </article>
+        <article class="widget widget--schedule">
+          <span class="material-symbols-outlined"> schedule </span>
+          <dl>
+            <dt>
+              <h2>Horario de Barra</h2>
+            </dt>
+            <dd>
+              <span>Lunes a Viernes</span>
+              <span>07:30 - 20:30</span>
+            </dd>
+            <dd>
+              <span>Sábados y Domingos</span>
+              <span>09:30 - 21:00</span>
+            </dd>
+          </dl>
+          <footer>
+            <span class="material-symbols-outlined">nightlife</span>
+            <p>Sábado 19:30: Noche de Espresso & Jaz en Vivo</p>
+          </footer>
+        </article>
+        <article class="widget widget--mobility">
+          <span class="material-symbols-outlined"> directions_bike </span>
+          <h2>Acceso & Movilidad</h2>
+          <p>
+            Espacio peatonal rodeado de jacarandás y galerías de arte
+            independientes
+          </p>
+          <ul>
+            <li>Bicicletero vigilado (16 plazas con candado disponible)</li>
+            <li>Estación Subte (3 min a pie)</li>
+            <li>Pet-friendly & Terraza Calefaccionada</li>
+          </ul>
+          <footer>
+            <p>Coordenadas: -34.60200273781656, -58.45735913067199</p>
+          </footer>
+        </article>
+        <article class="widget widget--whatsapp">
+          <span class="material-symbols-outlined"> chat </span>
+          <span>Respuesta Inmediata</span>
+          <h2>WhatsApp Concierge</h2>
+          <p>Lunes a Domingo 08:00 a 21:00 hrs</p>
+          <button
+            class="button button-cta"
+            type="button">
+            Iniciar Chat
+          </button>
+        </article>
+        <article class="winget winget--contact-info">
+          <div class="widget__contact-item">
+            <span class="material-symbols-outlined">phone_in_talk</span>
+            <h3>Línea Fija Tostaduría</h3>
+            <strong>+54 9 11 666666</strong>
+          </div>
+          <div class="widget__contact-item">
+            <span class="material-symbols-outlined">mail</span>
+            <strong>cripta@draculacoffee.ar</strong>
+          </div>
+        </article>
+      </section>
+      <section class="contact-banner">
+        <span class="contact-banner__eyebrow">Experiencia Sensorial</span>
+        <h2 class="contact-banner__title">
+          ¿Ere Barista o tienes una cafetería?
+        </h2>
+        <p class="contact-banner__text">
+          Diseñamos perfiles de tueste a medida para barra de especialidad, con
+          calibración de molinos in situ, como dato de equipamiento y catas
+          mensuales de control de calidad.
+        </p>
+        <div class="contact-banner__actions">
+          <button class="button contact-banner__button">
+            Solicitar Muestra B2B
+          </button>
+          <button class="button contact-banner__button">
+            Ver Calendarios de Catas
+          </button>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer>
+      <div class="site-footer__top">
+        <div>
+          <!-- ? Falta agregar Alt a la imagen -->
+          <img
+            src="./assets/img/logo.svg"
+            alt="" />
+          <h3>Dracula Coffee</h3>
+          <p>
+            Alquimia de microlotes botánicos, tostados con precisión
+            termodinámica en Buenos Aires. Un homenaje al despertar sensorial,
+            la ciencia de extracción y el refinamiento nocturnal.
+          </p>
+          <div>
+            <span class="material-symbols-outlined"> photo_camera </span>
+            <span class="material-symbols-outlined"> alternate_email </span>
+            <span class="material-symbols-outlined"> location_on </span>
+          </div>
+        </div>
+        <div>
+          <h3>Explorar</h3>
+          <ul>
+            <li><a href="#">Comprar Granos</a></li>
+            <li><a href="#">Guía de Moliendas</a></li>
+            <li><a href="#">Club de Suscripción</a></li>
+            <li><a href="#">Catas & Eventos</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Soporte</h3>
+          <ul>
+            <li><a href="#">Envíos & Devoluciones</a></li>
+            <li><a href="#">Visitanos en el Lab</a></li>
+            <li><a href="#">Preguntas Frecuentes</a></li>
+            <li><a href="#">Politicas del Café</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Boletín de Cosechas</h3>
+          <p>
+            Suscribete para recibir
+            <span class="site-footer__discount">10%</span> en tu primer encargo
+            y acceso prioritario a microlotes limitados.
+          </p>
+          <!-- Agregar clase - ID, entre otras cosas-->
+          <form>
+            <input
+              type="email"
+              name="suscribe"
+              placeholder="tu@email.com" />
+            <input
+              type="submit"
+              value="Unirse" />
+          </form>
+        </div>
+      </div>
+      <div class="site-footer__bottom">
+        <p class="site-footer__copyright">
+          &copy; 2024 Dracula Coffee Roasters. Cultivo de especialidad & Ciencia
+          Botánica.
+        </p>
+        <div>
+          <span class="material-symbols-outlined">verified_user</span>
+          <span class="material-symbols-outlined">credit_card</span>
+          <span class="material-symbols-outlined">local_shipping</span>
+          <span>Transbank &#8226; Stripe &#8226; MercadoPago</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

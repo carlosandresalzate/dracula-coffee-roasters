@@ -1,0 +1,10 @@
+#Sistema y entorno
+.DS_Store
+Thumbs.db
+.env
+.vscode/
+
+# Miscellaneous
+*.txt
+*.md
+!README.md

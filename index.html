@@ -1,0 +1,1437 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="data:,"
+      type="image/x-icon" />
+    <title>Tienda de café - Dracula Coffee Roasters</title>
+    <!-- Pre-carga de tipografía (fallback) -->
+    <link
+      rel="preload"
+      href="./assets/fonts/EB_Garamond/EBGaramond-Regular.ttf"
+      as="font"
+      type="font/ttf" />
+    <link
+      rel="preload"
+      href="./assets/fonts/Plus_Jakarta_Sans/PlusJakartaSans-Regular.ttf"
+      as="font"
+      type="font/ttf" />
+    <!-- Tipografía EB Garamond y Plus Jakarta Sans -->
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+      crossorigin />
+    <!-- Material Icons -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=person,shopping_cart,search,science,sort,stat_minus_1,view_comfy_alt,view_list,tune,mode_heat,cleaning_services,south_america,award_star,cloud,inventory_2,psychology_alt,star,favorite,shopping_bag,coffee,scale,architecture,chat,photo_camera,alternate_email,location_on,verified_user,credit_card,local_shipping"
+      rel="stylesheet"
+      crossorigin />
+    <link
+      rel="stylesheet"
+      href="./css/style.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <!-- Header-Top -->
+      <div class="site-header__announcement">
+        <p>
+          🦇 ENVÍOS GRATIS EN PEDIDOS MAYORES A $45.000 | TUESTE FRESCO TODOS
+          LOS MARTES Y JUEVES | DRACULA PRO LIGHT EDITION
+        </p>
+      </div>
+      <!-- Nav -->
+      <nav class="main-nav">
+        <!-- Logo -->
+        <div class="main-nav__logo">
+          <a href="./index.html">
+            <img
+              src="./assets/img/logo.svg"
+              alt="El logo es un grano de cafe con alas fe murciélago"
+              width="200" />
+          </a>
+        </div>
+        <!-- Nav-Links -->
+        <ul class="main-nav__links">
+          <li><a href="./index.html">Tienda de café</a></li>
+          <li>-</li>
+          <li><a href="./pages/contacto.html">Contacto</a></li>
+        </ul>
+        <!-- Nav-Actions -->
+        <ul class="main-nav__actions">
+          <li>
+            <a href="#">
+              <span class="material-symbols-outlined"> search </span>
+            </a>
+          </li>
+          <li class="main-nav__action">
+            <a href="#">
+              <span class="material-symbols-outlined"> person </span>
+            </a>
+          </li>
+          <li class="main-nav__action">
+            <a href="#">
+              <span class="material-symbols-outlined">shopping_cart</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <!-- Main -->
+    <main
+      id="shop-page"
+      class="shop-page">
+      <!-- Hero Section -->
+      <div class="hero">
+        <p class="hero__cta">
+          <span class="hero__cta-indicator"></span>
+          <b
+            >TUESTE DEL MARTES: 100% GRANOS EN PUNTO ÓPTIMO DE
+            DESGASIFICACIÓN</b
+          >
+        </p>
+        <h1>Nuestra Colección de granos de Especialidad</h1>
+        <p>
+          Tostados en pequeños lotes semanales para conservar todos los aceites
+          esenciales, fragancias y notas florales o achocolatadas de cada
+          origen. Una alquimia de rigor botánico y pasión sommelier
+        </p>
+        <div class="quality-badge">
+          <span class="material-symbols-outlined"> science </span>
+          <p class="quality-badge__label">Control de Calidad Q-GRADER</p>
+          <p class="quality-badge__value">8 Lotes Activos</p>
+          <p>Puntaje SCA promedio: 88.4 pts</p>
+        </div>
+      </div>
+      <!-- Búsqueda del producto -->
+      <section
+        id="product-controls"
+        class="product-controls">
+        <!-- TODO: definir el method y action del formulario -->
+        <form
+          id="product-controls__form"
+          class="search-form">
+          <!-- Campo de búsqueda -->
+          <!-- Hay que agregar un for al label y un name al input-->
+          <label
+            for="product-controls__search"
+            class="search-input">
+            <span class="material-symbols-outlined">search</span>
+            <input
+              type="text"
+              id="search-input"
+              name="query"
+              placeholder="Buscar por notas, origen o variedad..." />
+          </label>
+          <!-- select -->
+          <label
+            for="sort-select"
+            class="product-controls__sort">
+            <span class="material-symbols-outlined">sort</span>
+            <span class="product-controls__sort-select">Ordenar:</span>
+            <select
+              name="sort-select"
+              id="sort"
+              class="product-controls__sort-select">
+              <option value="popular">Más populares</option>
+              <option value="score">Mayor puntaje SCA</option>
+              <option value="fresh">Recién tostados</option>
+              <option value="price-desc">Precio: mayor a menor</option>
+            </select>
+            <span class="material-symbols-outlined product-controls__sort-icon">
+              stat_minus_1
+            </span>
+          </label>
+          <!-- toggle -->
+          <div class="product-controls__view">
+            <!-- Grid -->
+            <button
+              type="button"
+              class="product-controls__view-button product-controls__view-button--grid"
+              aria-label="Vista en cuadricula">
+              <span class="material-symbols-outlined"> view_comfy_alt </span>
+            </button>
+
+            <button
+              type="button"
+              class="product-controls__view-button product-controls__view-button--list"
+              aria-label="Vista en lista">
+              <span class="material-symbols-outlined"> view_list </span>
+            </button>
+          </div>
+        </form>
+      </section>
+      <!-- Mostrar productos -->
+      <div class="shop-page__content">
+        <!-- Aside filtros -->
+        <aside
+          id="filters-sidebar"
+          class="filters">
+          <form
+            id="filters-form"
+            class="filters__form">
+            <!-- Header del aside -->
+            <header class="filters__header">
+              <h2 class="filters__title">
+                <span class="material-symbols-outlined"> tune </span>
+                Filtros
+              </h2>
+
+              <button
+                type="reset"
+                class="filters__clear">
+                Limpiar
+                <span class="material-symbols-outlined">
+                  cleaning_services
+                </span>
+              </button>
+            </header>
+            <!-- Grupo de filtros: Nivel de tueste -->
+            <fieldset class="filters__group">
+              <legend class="filters__legend">
+                <h2>Nivel de Tueste</h2>
+                <span class="material-symbols-outlined">mode_heat</span>
+              </legend>
+              <div class="filters__option-group">
+                <label
+                  for="filter-roast-light"
+                  class="filters__option">
+                  <input
+                    type="checkbox"
+                    name="roast"
+                    value="light" />
+                  <strong>Tueste Claro</strong>
+                </label>
+                <p>Floral, cítrico, jugoso (Filtro/V60)</p>
+              </div>
+              <div class="filters__option-group">
+                <label
+                  for="filter-roast-medium"
+                  class="filters__option">
+                  <input
+                    type="checkbox"
+                    name="roast"
+                    value="medium" />
+                  <strong>Tueste Medio</strong>
+                </label>
+                <p>Caramelo, nueces y frutos rojos</p>
+              </div>
+              <div class="filters__option-group">
+                <label
+                  for="filter-roast-signature"
+                  class="filters__option">
+                  <input
+                    type="checkbox"
+                    name="roast"
+                    value="signature" />
+                  <strong>Dracula Signature</strong>
+                </label>
+                <p>Chocolate 85%, humo & mora</p>
+              </div>
+            </fieldset>
+            <!-- Grupo de filtros: Origen -->
+            <fieldset class="filters__group">
+              <legend class="filters__legend">
+                <h2>Origen</h2>
+                <span class="material-symbols-outlined">south_america</span>
+              </legend>
+              <label class="filters__option">
+                <input
+                  type="checkbox"
+                  name="origin"
+                  value="colombia" />
+                Colombia
+              </label>
+              <label class="filters__option">
+                <input
+                  type="checkbox"
+                  name="origin"
+                  value="panama" />
+                Panamá
+              </label>
+              <label class="filters__option">
+                <input
+                  type="checkbox"
+                  name="origin"
+                  value="etiopia" />
+                Etiopía
+              </label>
+              <label class="filters__option">
+                <input
+                  type="checkbox"
+                  name="origin"
+                  value="kenia" />
+                Kenia
+              </label>
+              <label class="filters__option">
+                <input
+                  type="checkbox"
+                  name="origin"
+                  value="sumatra" />
+                Sumatra
+              </label>
+              <label class="filters__option">
+                <input
+                  type="checkbox"
+                  name="origin"
+                  value="guatemala" />
+                Guatemala
+              </label>
+            </fieldset>
+            <!-- Grupo de filtros: Puntuación SCA -->
+            <fieldset class="filters__group">
+              <legend class="filters__legend">
+                <h2>Puntuación SCA</h2>
+                <span class="material-symbols-outlined"> award_star </span>
+              </legend>
+              <label
+                class="filters__option"
+                for="filter-sca-1">
+                <input
+                  id="filter-sca-1"
+                  name="sca-score"
+                  type="radio"
+                  value="90-plus" />
+                <p>90+Puntos (Excepcional) span.</p>
+                <span class="filters_quantity">2</span>
+              </label>
+              <label
+                class="filters__option"
+                for="filter-sca-2">
+                <input
+                  id="filter-sca-2"
+                  name="sca-score"
+                  type="radio"
+                  value="87-89" />
+                <p>87 - 89 Puntos (Excelente)</p>
+                <span class="filters__quantity">4</span>
+              </label>
+              <label
+                class="filters__option"
+                for="filter-sca-3">
+                <input
+                  id="filter-sca-3"
+                  name="sca-score"
+                  type="radio"
+                  value="85-86" />
+                <p>85 - 86 Puntos (Muy Bueno)</p>
+                <span class="filters__quantity">2</span>
+              </label>
+            </fieldset>
+            <!-- Grupo de filtros: Proceso de Beneficio -->
+            <fieldset class="filters__group">
+              <legend class="filters__legend">
+                <h2>Proceso de Beneficio</h2>
+                <span class="material-symbols-outlined"> cloud </span>
+              </legend>
+              <button
+                class="filters__button"
+                type="button"
+                title="Todos"
+                value="all">
+                Todos
+              </button>
+              <button
+                class="filters__button"
+                type="button"
+                title="Lavado Puro"
+                value="purewash">
+                Lavado Puro
+              </button>
+              <button
+                class="filters__button"
+                type="button"
+                title="Natural Láctico"
+                value="naturallac">
+                Natural Láctico
+              </button>
+              <button
+                class="filters__button"
+                type="button"
+                title="Honey Amarillo"
+                value="honeyyellow">
+                Honey Amarillo
+              </button>
+              <button
+                class="filters__button"
+                type="button"
+                title="Anaeróbico 72h"
+                value="anaerobic">
+                Anaeróbico 72h
+              </button>
+            </fieldset>
+            <!-- Grupo Filtros: Formato & Empaque -->
+            <fieldset class="filters__group">
+              <legend class="filters__legend">
+                <h2>Formato & Empaque</h2>
+                <span class="material-symbols-outlined"> inventory_2 </span>
+              </legend>
+            </fieldset>
+            <label class="filters__option">
+              <input
+                type="checkbox"
+                name="package"
+                value="bag-250"
+                checked />
+              Bolsa 250 Gramos
+            </label>
+            <label class="filters__option">
+              <input
+                type="checkbox"
+                name="package"
+                value="bag-500"
+                checked />
+              Bolsa 500 Gramos
+            </label>
+            <label class="filters__option">
+              <input
+                type="checkbox"
+                name="package"
+                value="bar-bag-1k" />
+              Formato Barista (1KG)
+            </label>
+            <label class="filters__option">
+              <input
+                type="checkbox"
+                name="package"
+                value="drip-bag-x10" />
+              Drip Bags (Caja de 10)
+            </label>
+          </form>
+          <!-- ASIDE: sección guie sensorial Dracula -->
+          <section class="sensorial-guide">
+            <header>
+              <h2>
+                <span class="material-symbols-outlined"> psychology_alt </span>
+                Guía Sensorial Dracula
+              </h2>
+            </header>
+
+            <p>
+              Cada lote incluye un mapa cromatográfico de tostión. Los
+              micro-lotes anaeróbicos ofrecen un perfil de acidez málica
+              semejante a la ciruela negra y uva Isabella.
+            </p>
+            <!-- TODO: agregar una clase y un ID -->
+            <div>
+              <p>Preservación CO<sub>2</sub></p>
+              <p>Válvula 1-way compostable</p>
+            </div>
+          </section>
+        </aside>
+        <!-- Grilla de productos -->
+        <!-- TODO: hay que agregar una clase para cambiar la disposición de la vista de productos -->
+        <section
+          id="product-list"
+          class="product-list">
+          <div class="product-list__grid">
+            <!-- Product Card 1 -->
+            <article class="product-card">
+              <header class="product-card__header">
+                <span class="badge badge--exclusive">Micro-lote Exclusivo</span>
+                <span class="badge badge--score">
+                  <span class="material-symbols-outlined"> star </span>91.5 SCA
+                </span>
+              </header>
+              <!-- Cambiar el tamaño de las imágenes y optimizarlas -->
+              <figure class="product-card__image">
+                <img
+                  width="500"
+                  src="./assets/img/products/product_geisha_reserve.jpg"
+                  alt="Producto Geisha Finca La Alquimia" />
+                <!-- El figcaption se debería agregar para mayor accesibilidad y ocultar con css -->
+              </figure>
+              <div class="product-card__body">
+                <h3 class="product-card__title">Geisha Finca La Alquimia</h3>
+                <p class="product-card__origin">
+                  <span class="product-card__origin-name">Boquete, Panamá</span>
+                  <span class="product-card__origin-detail">1850 MSNM</span>
+                </p>
+                <ul class="product-card__notes">
+                  <li class="product-card__note">Jazmín</li>
+                  <li class="product-card__note">Bergamota</li>
+                  <li class="product-card__note">Miel de Aahar</li>
+                </ul>
+                <!-- Rating -->
+                <!-- Attribute Acidez -->
+                <div class="product-card__attribute">
+                  <div class="product-card__attribute">
+                    <p class="product-card__attribute-label">Acidez</p>
+                    <div>
+                      <span
+                        class="rating-bar__segment rating-bar__segment--filled"></span>
+                      <span
+                        class="rating-bar__segment rating-bar__segment--filled"></span>
+                      <span
+                        class="rating-bar__segment rating-bar__segment--filled"></span>
+                      <span
+                        class="rating-bar__segment rating-bar__segment--filled"></span>
+                      <span
+                        class="rating-bar__segment rating-bar__segment--empty"></span>
+                    </div>
+                  </div>
+                  <!-- Attribute Cuerpo -->
+                  <div class="product-card__attribute">
+                    <p class="product-card__attribute-label">Cuerpo</p>
+                    <div>
+                      <span
+                        class="rating-bar__segment rating-bar__segment--filled"></span>
+                      <span
+                        class="rating-bar__segment rating-bar__segment--filled"></span>
+                      <span
+                        class="rating-bar__segment rating-bar__segment--filled"></span>
+                      <span
+                        class="rating-bar__segment rating-bar__segment--empty"></span>
+                      <span
+                        class="rating-bar__segment rating-bar__segment--empty"></span>
+                    </div>
+                  </div>
+                </div>
+                <!-- Attribute -->
+                <div class="product-card__attribute">
+                  <p class="product-card__attribute-label">Dulzura</p>
+                  <div>
+                    <span
+                      class="rating-bar__segment rating-bar__segment--filled"></span>
+                    <span
+                      class="rating-bar__segment rating-bar__segment--filled"></span>
+                    <span
+                      class="rating-bar__segment rating-bar__segment--filled"></span>
+                    <span
+                      class="rating-bar__segment rating-bar__segment--filled"></span>
+                    <span
+                      class="rating-bar__segment rating-bar__segment--empty"></span>
+                  </div>
+                </div>
+                <!-- Footer -->
+                <footer class="product-card__footer">
+                  <!-- Formulario -->
+                  <form class="product-card__newsletter">
+                    <!-- Format -->
+                    <div class="product-card__format">
+                      <p class="product-card__format-title">Formato:</p>
+                      <label class="product-card__format-option">
+                        <input
+                          type="radio"
+                          name="format-1"
+                          value="250g" />
+                        <span>250g</span>
+                      </label>
+                      <label class="product-card__format-option">
+                        <input
+                          type="radio"
+                          name="format-1"
+                          value="500g" />
+                        <span>500g</span>
+                      </label>
+                      <label class="product-card__format-option">
+                        <input
+                          type="radio"
+                          name="format-1"
+                          value="1kg" />
+                        <span>1kg</span>
+                      </label>
+                    </div>
+                    <!-- beans -->
+                    <select
+                      class="product-card__grind"
+                      name="beans"
+                      id="beans-1">
+                      <!-- TODO: pensar en los valores que debería tener cada opción. -->
+                      <option value="whole-bean">
+                        Grano Entero (Recomendado)
+                      </option>
+                      <option value="v60-kalita">
+                        Molido Filtro V60 /Kalita
+                      </option>
+                      <option value="french-press">
+                        Molido Prensa Francesa
+                      </option>
+                      <option value="espresso">Molido Espresso Fino</option>
+                    </select>
+                    <!-- Form Actions -->
+                    <section class="product-card__actions">
+                      <p class="product-card__price">
+                        <span class="price-text">PRECIO</span>
+                        <span class="price-value">$24.500</span>
+                      </p>
+                      <button
+                        type="button"
+                        class="product-card__favorite"
+                        aria-label="Me gusta">
+                        <span class="material-symbols-outlined">favorite</span>
+                      </button>
+                      <button
+                        type="submit"
+                        class="form-actions__add-cart">
+                        <span class="material-symbols-outlined">
+                          shopping_bag
+                        </span>
+                        <span>Agregar</span>
+                      </button>
+                    </section>
+                  </form>
+                </footer>
+              </div>
+            </article>
+            <!-- Product Card 2 -->
+            <article class="product-card">
+              <header class="product-card__header">
+                <span class="badge badge--exclusive">Nuevo Origen</span>
+                <span class="badge badge--score">
+                  <span class="material-symbols-outlined">star</span>89.2 SCA
+                </span>
+              </header>
+              <!-- TODO: Cambiar el tamaño de las imágenes y optimizarlas -->
+              <figure class="product-card__image">
+                <img
+                  width="500"
+                  src="./assets/img/products/product_blood_orange.jpg"
+                  alt="Producto blood orange blend" />
+                <!-- El figcaption se debería agregar para mayor accesibilidad y ocultar con css -->
+              </figure>
+              <div class="product-card__body">
+                <h3 class="product-card__title">Blood Orange Blend</h3>
+                <p class="product-card__origin">
+                  <span class="product-card__origin-name">
+                    Yirgacheffe Sol Naciente
+                  </span>
+                  <span class="product-card__origin-detail">2,100 MSNM</span>
+                </p>
+                <ul class="product-card__notes">
+                  <li class="product-card__note">Naranja Sanguinea Dulce</li>
+                  <li class="product-card__note">Ruby Pomegranate</li>
+                  <li class="product-card__note">Cane Honey</li>
+                  <li class="product-card__note">Hibiscus</li>
+                </ul>
+                <!-- Rating -->
+                <!-- Attribute Acidez -->
+                <div class="product-card__attributes">
+                  <div class="product-card__attribute">
+                    <p class="product-card__attribute-label">Acidez</p>
+                    <div>
+                      <span
+                        class="rating-bar__segment rating-bar__segment--filled"></span>
+                      <span
+                        class="rating-bar__segment rating-bar__segment--filled"></span>
+                      <span
+                        class="rating-bar__segment rating-bar__segment--filled"></span>
+                      <span
+                        class="rating-bar__segment rating-bar__segment--filled"></span>
+                      <span
+                        class="rating-bar__segment rating-bar__segment--empty"></span>
+                    </div>
+                  </div>
+                  <!-- Attribute Cuerpo -->
+                  <div class="product-card__attribute">
+                    <p class="product-card__attribute-label">Cuerpo</p>
+                    <div>
+                      <span
+                        class="rating-bar__segment rating-bar__segment--filled"></span>
+                      <span
+                        class="rating-bar__segment rating-bar__segment--filled"></span>
+                      <span
+                        class="rating-bar__segment rating-bar__segment--filled"></span>
+                      <span
+                        class="rating-bar__segment rating-bar__segment--filled"></span>
+                      <span
+                        class="rating-bar__segment rating-bar__segment--empty"></span>
+                    </div>
+                  </div>
+                </div>
+                <!-- Attribute -->
+                <div class="product-card__attribute">
+                  <p class="product-card__attribute-label">Dulzura</p>
+                  <div>
+                    <span
+                      class="rating-bar__segment rating-bar__segment--filled"></span>
+                    <span
+                      class="rating-bar__segment rating-bar__segment--filled"></span>
+                    <span
+                      class="rating-bar__segment rating-bar__segment--filled"></span>
+                    <span
+                      class="rating-bar__segment rating-bar__segment--empty"></span>
+                    <span
+                      class="rating-bar__segment rating-bar__segment--empty"></span>
+                  </div>
+                </div>
+                <!-- Footer -->
+                <footer class="product-card__footer">
+                  <!-- Formulario -->
+                  <form class="product-card__form">
+                    <!-- Format -->
+                    <div class="product-card__format">
+                      <p class="product-card__format-title">Formato:</p>
+                      <label class="product-card__format-option">
+                        <input
+                          type="radio"
+                          name="format-2"
+                          value="250g" />
+                        <span>250g</span>
+                      </label>
+                      <label class="product-card__format-option">
+                        <input
+                          type="radio"
+                          name="format-2"
+                          value="500g" />
+                        <span>500g</span>
+                      </label>
+                      <label class="product-card__format-option">
+                        <input
+                          type="radio"
+                          name="format-2"
+                          value="1kg" />
+                        <span>1kg</span>
+                      </label>
+                    </div>
+                    <!-- beans -->
+                    <select
+                      class="product-card__grind"
+                      name="beans-2"
+                      id="beans">
+                      <option value="whole-bean">
+                        Grano Entero (Recomendado)
+                      </option>
+                      <option value="v60-kalita">
+                        Molido Filtro V60 /Kalita
+                      </option>
+                      <option value="french-press">
+                        Molido Prensa Francesa
+                      </option>
+                      <option value="espresso">Molido Espresso Fino</option>
+                    </select>
+                    <!-- Form Actions -->
+                    <section class="product-card__actions">
+                      <p class="product-card__price">
+                        <span class="price-text">PRECIO</span>
+                        <span class="price-value">$24.500</span>
+                      </p>
+                      <button
+                        type="button"
+                        class="product-card__favorite"
+                        aria-label="Me gusta">
+                        <span class="material-symbols-outlined">favorite</span>
+                      </button>
+                      <button
+                        type="submit"
+                        class="product-card__add-cart">
+                        <span class="material-symbols-outlined">
+                          shopping_bag
+                        </span>
+                        <span>Agregar</span>
+                      </button>
+                    </section>
+                  </form>
+                </footer>
+              </div>
+            </article>
+            <!-- Product Card 3 -->
+            <article class="product-card">
+              <header class="product-card__header">
+                <span class="badge badge--exclusive">
+                  Micro-lote Cosecha Especial
+                </span>
+                <span class="badge badge--score">
+                  <span class="material-symbols-outlined"> star </span>
+                  91.5 SCA
+                </span>
+              </header>
+              <!-- Cambiar el tamaño de las imágenes y optimizarlas -->
+              <figure class="product-card__image">
+                <img
+                  width="500"
+                  src="./assets/img/products/product_geisha_white.jpg"
+                  alt="Producto Geisha Finca La Alquimia" />
+                <!-- El figcaption se debería agregar para mayor accesibilidad y ocultar con css -->
+              </figure>
+              <div class="product-card__body">
+                <h3 class="product-card__title">Geisha Reserve</h3>
+                <p class="product-card__origin">
+                  <span class="product-card__origin-name">Boquete, Panamá</span>
+                  <span class="product-card__origin-detail">1,920 MSNM</span>
+                </p>
+                <ul class="product-card__notes">
+                  <li class="product-card__note">Jazmín</li>
+                  <li class="product-card__note">Melocotón blanco</li>
+                  <li class="product-card__note">Miel Bergamota</li>
+                </ul>
+                <!-- Rating -->
+                <!-- Attribute Acidez -->
+                <div class="product-card__attribute">
+                  <div class="product-card__attribute">
+                    <p class="product-card__attribute-label">Acidez</p>
+                    <div>
+                      <span
+                        class="rating-bar__segment rating-bar__segment--filled"></span>
+                      <span
+                        class="rating-bar__segment rating-bar__segment--filled"></span>
+                      <span
+                        class="rating-bar__segment rating-bar__segment--filled"></span>
+                      <span
+                        class="rating-bar__segment rating-bar__segment--filled"></span>
+                      <span
+                        class="rating-bar__segment rating-bar__segment--filled"></span>
+                    </div>
+                  </div>
+                  <!-- Attribute Cuerpo -->
+                  <div class="product-card__attribute">
+                    <p class="product-card__attribute-label">Cuerpo</p>
+                    <div>
+                      <span
+                        class="rating-bar__segment rating-bar__segment--filled"></span>
+                      <span
+                        class="rating-bar__segment rating-bar__segment--filled"></span>
+                      <span
+                        class="rating-bar__segment rating-bar__segment--empty"></span>
+                      <span
+                        class="rating-bar__segment rating-bar__segment--empty"></span>
+                      <span
+                        class="rating-bar__segment rating-bar__segment--empty"></span>
+                    </div>
+                  </div>
+                </div>
+                <!-- Attribute -->
+                <div class="product-card__attribute">
+                  <p class="product-card__attribute-label">Dulzura</p>
+                  <div>
+                    <span
+                      class="rating-bar__segment rating-bar__segment--filled"></span>
+                    <span
+                      class="rating-bar__segment rating-bar__segment--filled"></span>
+                    <span
+                      class="rating-bar__segment rating-bar__segment--filled"></span>
+                    <span
+                      class="rating-bar__segment rating-bar__segment--filled"></span>
+                    <span
+                      class="rating-bar__segment rating-bar__segment--filled"></span>
+                  </div>
+                </div>
+                <!-- Footer -->
+                <footer class="product-card__footer">
+                  <!-- Formulario -->
+                  <form class="product-card__form">
+                    <!-- Format -->
+                    <div class="product-card__format">
+                      <p class="product-card__format-title">Formato:</p>
+                      <label class="product-card__format-option">
+                        <input
+                          type="radio"
+                          name="format-3"
+                          value="250g" />
+                        <span>250g</span>
+                      </label>
+                      <label class="product-card__format-option">
+                        <input
+                          type="radio"
+                          name="format-3"
+                          value="500g" />
+                        <span>500g</span>
+                      </label>
+                      <label class="product-card__format-option">
+                        <input
+                          type="radio"
+                          name="format-3"
+                          value="1kg" />
+                        <span>1kg</span>
+                      </label>
+                    </div>
+                    <!-- beans -->
+                    <select
+                      class="product-card__grind"
+                      name="beans-3"
+                      id="beans">
+                      <option value="whole-bean">
+                        Grano Entero (Recomendado)
+                      </option>
+                      <option value="v60-kalita">
+                        Molido Filtro V60 /Kalita
+                      </option>
+                      <option value="french-press">
+                        Molido Prensa Francesa
+                      </option>
+                      <option value="espresso">Molido Espresso Fino</option>
+                    </select>
+                    <!-- Form Actions -->
+                    <section class="product-card__actions">
+                      <p class="product-card__price">
+                        <span class="price-text">PRECIO</span>
+                        <span class="price-value">$34.000</span>
+                      </p>
+                      <button
+                        type="button"
+                        class="product-card__favorite"
+                        aria-label="Me gusta">
+                        <span class="material-symbols-outlined">
+                          favorite
+                        </span>
+                      </button>
+                      <button
+                        type="submit"
+                        class="product-card__add-cart">
+                        <span class="material-symbols-outlined">
+                          shopping_bag
+                        </span>
+                        <span>Agregar</span>
+                      </button>
+                    </section>
+                  </form>
+                </footer>
+              </div>
+            </article>
+            <!-- Product Card 4 -->
+            <article class="product-card">
+              <header class="product-card__header">
+                <span class="badge badge--exclusive">Best Seller</span>
+                <span class="badge badge--score"
+                  ><span class="material-symbols-outlined">star</span>88.5
+                  SCA</span
+                >
+              </header>
+              <!-- Cambiar el tamaño de las imágenes y optimizarlas -->
+              <figure class="product-card__image">
+                <img
+                  width="500"
+                  src="./assets/img/products/product_nocturnal_blend.jpg"
+                  alt="Producto Geisha Finca La Alquimia" />
+                <!-- El figcaption se debería agregar para mayor accesibilidad y ocultar con css -->
+              </figure>
+              <div class="product-card__body">
+                <h3 class="product-card__title">Nocturnal Blend</h3>
+                <p class="product-card__origin">
+                  <span class="product-card__origin-name"
+                    >Antioquia, Colombia</span
+                  >
+                  <span class="product-card__origin-detail">1850 MSNM</span>
+                </p>
+                <ul class="product-card__notes">
+                  <li class="product-card__note">Dark Venezuelan Cocoa</li>
+                  <li class="product-card__note">Smoked Cedar</li>
+                  <li class="product-card__note">Black Cherry</li>
+                  <li class="product-card__note">Molasses Crema</li>
+                </ul>
+                <!-- Rating -->
+                <!-- Attribute Acidez -->
+                <div class="product-card__attributes">
+                  <div class="product-card__attribute">
+                    <p class="product-card__attribute-label">Acidez</p>
+                    <div>
+                      <span
+                        class="rating-bar__segment rating-bar__segment--filled"></span>
+                      <span
+                        class="rating-bar__segment rating-bar__segment--empty"></span>
+                      <span
+                        class="rating-bar__segment rating-bar__segment--empty"></span>
+                      <span
+                        class="rating-bar__segment rating-bar__segment--empty"></span>
+                      <span
+                        class="rating-bar__segment rating-bar__segment--empty"></span>
+                    </div>
+                  </div>
+                  <!-- Attribute Cuerpo -->
+                  <div class="product-card__attribute">
+                    <p class="product-card__attribute-label">Cuerpo</p>
+                    <div>
+                      <span
+                        class="rating-bar__segment rating-bar__segment--filled"></span>
+                      <span
+                        class="rating-bar__segment rating-bar__segment--filled"></span>
+                      <span
+                        class="rating-bar__segment rating-bar__segment--filled"></span>
+                      <span
+                        class="rating-bar__segment rating-bar__segment--filled"></span>
+                      <span
+                        class="rating-bar__segment rating-bar__segment--filled"></span>
+                    </div>
+                  </div>
+                </div>
+                <!-- Attribute -->
+                <div class="product-card__attribute">
+                  <p class="product-card__attribute-label">Dulzura</p>
+                  <div>
+                    <span
+                      class="rating-bar__segment rating-bar__segment--filled"></span>
+                    <span
+                      class="rating-bar__segment rating-bar__segment--filled"></span>
+                    <span
+                      class="rating-bar__segment rating-bar__segment--filled"></span>
+                    <span
+                      class="rating-bar__segment rating-bar__segment--filled"></span>
+                    <span
+                      class="rating-bar__segment rating-bar__segment--empty"></span>
+                  </div>
+                </div>
+                <!-- Footer -->
+                <footer class="product-card__footer">
+                  <!-- Formulario -->
+                  <form class="product-card__form">
+                    <!-- Format -->
+                    <div class="product-card__format">
+                      <p class="product-card__format-title">Formato:</p>
+                      <label class="product-card__format-option">
+                        <input
+                          type="radio"
+                          name="format-4"
+                          value="250g" />
+                        <span>250g</span>
+                      </label>
+                      <label class="product-card__format-option">
+                        <input
+                          type="radio"
+                          name="format-4"
+                          value="500g" />
+                        <span>500g</span>
+                      </label>
+                      <label class="product-card__format-option">
+                        <input
+                          type="radio"
+                          name="format-4"
+                          value="1kg" />
+                        <span>1kg</span>
+                      </label>
+                    </div>
+                    <!-- beans -->
+                    <select
+                      class="product-card__grind"
+                      name="beans-4"
+                      id="beans">
+                      <option value="whole-bean">
+                        Grano Entero (Recomendado)
+                      </option>
+                      <option value="v60-kalita">
+                        Molido Filtro V60 /Kalita
+                      </option>
+                      <option value="french-press">
+                        Molido Prensa Francesa
+                      </option>
+                      <option value="espresso">Molido Espresso Fino</option>
+                    </select>
+                    <!-- Form Actions -->
+                    <section class="product-card__actions">
+                      <p class="product-card__price">
+                        <span class="price-text">PRECIO</span>
+                        <span class="price-value">$22.000</span>
+                      </p>
+                      <button
+                        aria-label="Me gusta"
+                        class="product-card__favorite"
+                        type="button">
+                        <span class="material-symbols-outlined">favorite</span>
+                      </button>
+                      <button
+                        class="product-card__add-cart"
+                        type="submit">
+                        <span class="material-symbols-outlined">
+                          shopping_bag
+                        </span>
+                        <span>Agregar</span>
+                      </button>
+                    </section>
+                  </form>
+                </footer>
+              </div>
+            </article>
+            <!-- Product Card 5 -->
+            <article class="product-card">
+              <header class="product-card__header">
+                <span class="badge badge--new-origin">Nuevo Origen</span>
+                <span class="badge badge--score">
+                  <span class="material-symbols-outlined"> star </span>
+                  90.0 SCA
+                </span>
+              </header>
+              <!-- Cambiar el tamaño de las imágenes y optimizarlas -->
+              <figure class="product-card__image">
+                <img
+                  alt="Producto Nocturnal Nectar"
+                  src="./assets/img/products/product_nocturnal_nectar.jpg"
+                  width="500" />
+                <!-- El figcaption se debería agregar para mayor accesibilidad y ocultar con css -->
+              </figure>
+              <div class="product-card__body">
+                <h3 class="product-card__title">Nocturnal Nectar</h3>
+                <p class="product-card__origin">
+                  <span class="product-card__origin-name">Nyeri, Kenia</span>
+                  <span class="product-card__origin-detail">1950 MSNM</span>
+                </p>
+                <ul class="product-card__notes">
+                  <li class="product-card__note">Grosella Negra</li>
+                  <li class="product-card__note">Violetas Silvestres</li>
+                  <li class="product-card__note">Manzana Verde</li>
+                </ul>
+                <!-- Rating -->
+                <!-- Attribute Acidez -->
+                <div class="product-card__attributes">
+                  <div class="product-card__attribute">
+                    <p class="product-card__attribute-label">Acidez</p>
+                    <div>
+                      <span
+                        class="rating-bar__segment rating-bar__segment--filled"></span>
+                      <span
+                        class="rating-bar__segment rating-bar__segment--filled"></span>
+                      <span
+                        class="rating-bar__segment rating-bar__segment--filled"></span>
+                      <span
+                        class="rating-bar__segment rating-bar__segment--filled"></span>
+                      <span
+                        class="rating-bar__segment rating-bar__segment--filled"></span>
+                    </div>
+                  </div>
+                  <!-- Attribute Cuerpo -->
+                  <div class="product-card__attribute">
+                    <p class="product-card__attribute-label">Cuerpo</p>
+                    <div>
+                      <span
+                        class="rating-bar__segment rating-bar__segment--filled"></span>
+                      <span
+                        class="rating-bar__segment rating-bar__segment--filled"></span>
+                      <span
+                        class="rating-bar__segment rating-bar__segment--empty"></span>
+                      <span
+                        class="rating-bar__segment rating-bar__segment--empty"></span>
+                      <span
+                        class="rating-bar__segment rating-bar__segment--empty"></span>
+                    </div>
+                  </div>
+                </div>
+                <!-- Attribute -->
+                <div class="product-card__attribute">
+                  <p class="product-card__attribute-label">Dulzura</p>
+                  <div>
+                    <span
+                      class="rating-bar__segment rating-bar__segment--filled"></span>
+                    <span
+                      class="rating-bar__segment rating-bar__segment--filled"></span>
+                    <span
+                      class="rating-bar__segment rating-bar__segment--filled"></span>
+                    <span
+                      class="rating-bar__segment rating-bar__segment--filled"></span>
+                    <span
+                      class="rating-bar__segment rating-bar__segment--empty"></span>
+                  </div>
+                </div>
+                <!-- Footer -->
+                <footer class="product-card__footer">
+                  <!-- Formulario -->
+                  <form class="product-card__form">
+                    <!-- Format -->
+                    <div class="product-card__format">
+                      <p class="product-card__format-title">Formato:</p>
+                      <label class="product-card__format-option">
+                        <input
+                          name="format-5"
+                          type="radio"
+                          value="250g" />
+                        <span>250g</span>
+                      </label>
+                      <label class="product-card__format-option">
+                        <input
+                          name="format-5"
+                          type="radio"
+                          value="500g" />
+                        <span>500g</span>
+                      </label>
+                      <label class="product-card__format-option">
+                        <input
+                          name="format-5"
+                          type="radio"
+                          value="1kg" />
+                        <span>1kg</span>
+                      </label>
+                    </div>
+                    <!-- beans -->
+                    <select
+                      class="product-card__grind"
+                      id="beans-5"
+                      name="beans">
+                      <option value="whole-bean">
+                        Grano Entero (Recomendado)
+                      </option>
+                      <option value="v60-kalita">
+                        Molido Filtro V60 /Kalita
+                      </option>
+                      <option value="french-press">
+                        Molido Prensa Francesa
+                      </option>
+                      <option value="espresso">Molido Espresso Fino</option>
+                    </select>
+                    <!-- Form Actions -->
+                    <section class="product-card__actions">
+                      <p class="product-card__price">
+                        <span class="price-text">PRECIO</span>
+                        <span class="price-value">$24.500</span>
+                      </p>
+                      <button
+                        aria-label="Me gusta"
+                        class="product-card__favorite"
+                        type="button">
+                        <span class="material-symbols-outlined">favorite</span>
+                      </button>
+                      <button
+                        class="product-card__add-cart"
+                        type="submit">
+                        <span class="material-symbols-outlined">
+                          shopping_bag
+                        </span>
+                        <span>Agregar</span>
+                      </button>
+                    </section>
+                  </form>
+                </footer>
+              </div>
+            </article>
+            <!-- Product Card 6 -->
+            <article class="product-card">
+              <header class="product-card__header">
+                <span class="badge badge--exclusive">Pack Degustación</span>
+                <span class="badge badge--score">
+                  <span class="material-symbols-outlined"> star </span>
+                  Multiorigen
+                </span>
+              </header>
+              <!-- Cambiar el tamaño de las imágenes y optimizarlas -->
+              <figure class="product-card__image">
+                <img
+                  alt="Producto Geisha Finca La Alquimia"
+                  src="./assets/img/products/product_blood_moon_box.jpg"
+                  width="500" />
+                <!-- El figcaption se debería agregar para mayor accesibilidad y ocultar con css -->
+              </figure>
+              <div class="product-card__body">
+                <h3 class="product-card__title">Blood Moon Tasting Vault</h3>
+                <p class="product-card__origin">
+                  <span class="product-card__origin-name">Edición Viajera</span>
+                  <span class="product-card__origin-detail"
+                    >Caja X 10 Drip Bags</span
+                  >
+                </p>
+                <ul class="product-card__notes">
+                  <li class="product-card__note">Fácil Extracción</li>
+                  <li class="product-card__note">Sin Máquina</li>
+                  <li class="product-card__note">100% Fresco</li>
+                </ul>
+                <!-- Rating -->
+                <!-- Attribute Acidez -->
+                <div class="product-card__attributes">
+                  <div class="product-card__attribute">
+                    <p class="product-card__attribute-label">Practicidad</p>
+                    <div>
+                      <span
+                        class="rating-bar__segment rating-bar__segment--filled"></span>
+                      <span
+                        class="rating-bar__segment rating-bar__segment--filled"></span>
+                      <span
+                        class="rating-bar__segment rating-bar__segment--filled"></span>
+                      <span
+                        class="rating-bar__segment rating-bar__segment--filled"></span>
+                      <span
+                        class="rating-bar__segment rating-bar__segment--filled"></span>
+                    </div>
+                  </div>
+                  <!-- Attribute Cuerpo -->
+                  <div class="product-card__attribute">
+                    <p class="product-card__attribute-label">
+                      Variedad Sensorial
+                    </p>
+                    <div>
+                      <span
+                        class="rating-bar__segment rating-bar__segment--filled"></span>
+                      <span
+                        class="rating-bar__segment rating-bar__segment--filled"></span>
+                      <span
+                        class="rating-bar__segment rating-bar__segment--filled"></span>
+                      <span
+                        class="rating-bar__segment rating-bar__segment--filled"></span>
+                      <span
+                        class="rating-bar__segment rating-bar__segment--filled"></span>
+                    </div>
+                  </div>
+                </div>
+                <!-- Attribute -->
+                <div class="product-card__attribute">
+                  <p class="product-card__attribute-label">Dosis Precisa</p>
+                  <div>
+                    <span
+                      class="rating-bar__segment rating-bar__segment--filled"></span>
+                    <span
+                      class="rating-bar__segment rating-bar__segment--filled"></span>
+                    <span
+                      class="rating-bar__segment rating-bar__segment--filled"></span>
+                    <span
+                      class="rating-bar__segment rating-bar__segment--filled"></span>
+                    <span
+                      class="rating-bar__segment rating-bar__segment--filled"></span>
+                  </div>
+                </div>
+                <!-- Footer -->
+                <footer class="product-card__footer">
+                  <div class="tasting-box">
+                    <div class="tasting-box__quantity">
+                      <p>Contenido:</p>
+                      <p><strong>10 Sobres de 12g c/u</strong></p>
+                    </div>
+                    <div class="tasting-box__instructions">
+                      <span class="material-symbols-outlined">coffee</span>
+                      <p>Solo VIerte 180ml de agua a 92°C</p>
+                    </div>
+                  </div>
+                  <!-- Form Actions -->
+                  <section class="product-card__actions">
+                    <p class="product-card__price">
+                      <span class="price-text">PRECIO</span>
+                      <span class="price-value">$24.500</span>
+                    </p>
+                    <button
+                      aria-label="Me gusta"
+                      class="product-card__favorite"
+                      type="button">
+                      <span class="material-symbols-outlined">favorite</span>
+                    </button>
+                    <button
+                      class="product-card__add-cart"
+                      type="submit">
+                      <span class="material-symbols-outlined">
+                        shopping_bag
+                      </span>
+                      <span>Agregar</span>
+                    </button>
+                  </section>
+                </footer>
+              </div>
+            </article>
+          </div>
+          <!-- Pagination -->
+          <div class="pagination">
+            <p class="pagination__info">
+              Mostrando <strong>6</strong> de <strong>8</strong> micro-lotes
+              disponibles esta semana
+            </p>
+
+            <div class="pagination__controls">
+              <button class="pagination__button pagination__button--previous">
+                ← Anterior
+              </button>
+              <button
+                class="pagination__button pagination__button--page pagination__button--active">
+                1
+              </button>
+              <button class="pagination__button pagination__button--page">
+                2
+              </button>
+              <button class="pagination__button pagination__button--next">
+                Siguiente
+              </button>
+            </div>
+          </div>
+        </section>
+      </div>
+      <!-- Section Banner -->
+      <section class="consultation-banner">
+        <div class="consultation-banner__info">
+          <span class="material-symbols-outlined"> scale </span>
+          <div>
+            <span>Servicio de asesoría Barista</span>
+            <h2>Guía de Molienda: ¿No sabes cuál elegir para tu cafetera?</h2>
+            <p>
+              Desde la micro-precisión de 250 micrones para palancas La Pavoni
+              hasta 900 micrones para prensa francesa de inmersión total.
+              Nuestros braristas calibran cada muela Mahlkönig según tu método
+              diario
+            </p>
+          </div>
+        </div>
+        <div class="consultation-banner__actions">
+          <button class="button button--consult">
+            <span class="material-symbols-outlined">architecture</span>
+            <p>Consultar Comparador Interactivo</p>
+          </button>
+          <button class="btn btn__contact-wp">
+            <span class="material-symbols-outlined"> chat </span>
+            <p>Escríbenos por WhatsApp</p>
+          </button>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer>
+      <div class="site-footer__top">
+        <div>
+          <!-- ? Falta agregar Alt a la imagen -->
+          <img
+            src="./assets/img/logo.svg"
+            alt="" />
+          <h3>Dracula Coffee</h3>
+          <p>
+            Alquimia de microlotes botánicos, tostados con precisión
+            termodinámica en Buenos Aires. Un homenaje al despertar sensorial,
+            la ciencia de extracción y el refinamiento nocturnal.
+          </p>
+          <div>
+            <span class="material-symbols-outlined"> photo_camera </span>
+            <span class="material-symbols-outlined"> alternate_email </span>
+            <span class="material-symbols-outlined"> location_on </span>
+          </div>
+        </div>
+        <div>
+          <h3>Explorar</h3>
+          <ul>
+            <li><a href="#">Comprar Granos</a></li>
+            <li><a href="#">Guía de Moliendas</a></li>
+            <li><a href="#">Club de Suscripción</a></li>
+            <li><a href="#">Catas & Eventos</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Soporte</h3>
+          <ul>
+            <li><a href="#">Envíos & Devoluciones</a></li>
+            <li><a href="#">Visitanos en el Lab</a></li>
+            <li><a href="#">Preguntas Frecuentes</a></li>
+            <li><a href="#">Politicas del Café</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Boletín de Cosechas</h3>
+          <p>
+            Suscribete para recibir
+            <span class="site-footer__discount">10%</span> en tu primer encargo
+            y acceso prioritario a microlotes limitados.
+          </p>
+          <!-- Agregar clase - ID, entre otras cosas-->
+          <form>
+            <input
+              type="email"
+              name="suscribe"
+              placeholder="tu@email.com" />
+            <input
+              type="submit"
+              value="Unirse" />
+          </form>
+        </div>
+      </div>
+      <div class="site-footer__bottom">
+        <p class="site-footer__copyright">
+          &copy; 2024 Dracula Coffee Roasters. Cultivo de especialidad & Ciencia
+          Botánica.
+        </p>
+        <div>
+          <span class="material-symbols-outlined">verified_user</span>
+          <span class="material-symbols-outlined">credit_card</span>
+          <span class="material-symbols-outlined">local_shipping</span>
+          <span>Transbank &#8226; Stripe &#8226; MercadoPago</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
